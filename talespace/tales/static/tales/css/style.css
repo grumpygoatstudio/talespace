@@ -1,0 +1,592 @@
+html,body{
+	background: #fff repeat; /* Pattern by Welsley http://www.pdmb.org/work, found on Subtle Patterns https://www.toptal.com/designers/subtlepatterns */
+	margin: 0;
+	padding: 0;
+	top:0;
+	left:0;
+	box-sizing: border-box;
+	overflow-x: hidden;
+	margin-top:30px;		/* Offset because of the fixed navigation bar at the top. */
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Gloria Hallelujah', cursive;
+	margin: 0;
+}
+.row{
+	margin: 60px 0;
+}
+
+/* Site header + navigation */
+
+#app>header{
+	width:100%;
+	background:#F7941E;
+	margin: 0;
+	top:0;
+	left:0;
+	padding: 0px;
+	border-bottom: 1px solid #fff;
+	position: fixed;
+	z-index: 999;
+	color:#fff;
+}
+#app>header h1{
+	font-size: 2em;
+}
+#app>header .logo{
+	max-width: 200px;
+	margin: 0;
+	padding: 10px;
+	padding-bottom: 2px;
+}
+/* End header*/
+
+#app>footer{
+	text-align: center;
+	color:#bdbdbd;
+	margin:50px 0;
+}
+.sign-up-box{
+	border-radius: 5px 0px 0px 5px;
+}
+.sign-up-box h5{
+	margin-bottom: 20px;
+}
+/* A blop (a contained element with header, content and footer */
+.blop{
+	border-radius: 5px;
+	background: #fff;
+}
+.blop header{
+	border-radius: 5px 5px 0px 0px;
+	padding: 30px 20px;
+}
+.blop footer{
+	border-radius: 0px 0px 5px 5px;
+	padding:20px;
+	font-size: 1em;
+}
+header.cover-image{
+	box-shadow: inset 0px -100px 200px -50px black;
+	position: relative;
+}
+/* End blop*/
+
+/*
+.full-tale{
+		border: 1px solid #d4d4d4;
+}
+.blop header{
+	border-radius: 5px 5px 0px 0px;
+	padding: 50px 0;
+}
+header.cover-image{
+		box-shadow: inset 0px -100px 200px -50px black;
+		position: relative;
+}
+.blop header h1{
+	font-size: 3em;
+	font-weight: 200;
+	margin: 0;
+}
+.blop header span{
+	font-family: 'Gloria Hallelujah', cursive;
+	font-weight: 800;
+	margin-left: 10px;
+}
+.blop .tale{
+	padding: 50px 80px 0px 80px;
+}
+
+.blop footer{
+	border-radius: 0px 0px 5px 5px;
+	padding:20px 50px;
+}
+.blop footer h2{
+	font-weight: 300;
+}
+.blop footer span{
+	font-family: 'Amatic SC', cursive;
+	font-weight: 800;
+}
+*/
+.cover-image{
+	background: #f2f2f2 no-repeat center center; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	color:#fff;
+	text-align: center;
+}
+
+/*Button styling */
+.button.button-primary, button.button-primary, input[type="submit"].button-primary, input[type="reset"].button-primary, input[type="button"].button-primary{
+	color:#662D91;
+	text-decoration: none;
+	border: 1px solid #662D91;
+	transition:0.5s color background border!important;
+	background: none;
+}
+.button.active,button.active,.button.button-primary:hover, button.button-primary:hover, input[type="submit"].button-primary:hover, input[type="reset"].button-primary:hover, input[type="button"].button-primary:hover, .button.button-primary:focus, button.button-primary:focus, input[type="submit"].button-primary:focus, input[type="reset"].button-primary:focus, input[type="button"].button-primary:focus{
+	background: #662D91;
+	color:#fff;	
+}
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+  border: 1px solid #662D91;
+  outline: 0;
+}
+
+/*End of button styling*/
+
+
+.hidden{
+	display: none;
+}
+/* Beginning of slider */
+.slider,.slider .cover-image{
+	width: 100%;
+}
+.slider .cover-image{
+	padding: 70px 0;
+}
+.slider .cover-image h1, .article-header h1{
+	font-size: 5em;
+	line-height: 1em;
+	font-weight: 900;
+	text-shadow: 0 0 90px #4a4a4a;
+}
+.slider .cover-image h2, .article-header h2{
+	margin: 0;
+	font-size: 1.8em;
+	font-weight: 400;
+	text-shadow: 0 0 15px #000;
+	color:#fff;
+}
+.slider .cover-image h2{
+	padding-top: 40px;
+}
+.article-header{
+	padding: 70px 0;
+}
+.slider .button{
+	margin-top: 70px;
+	padding-bottom:-100px;
+	border:1px solid #fff;
+	background: #fff;
+	color:#000;
+}
+.slider .button:hover{
+	background: rgba(255, 255, 255, 0.2);
+	color:#fff;
+}
+.slidr-breadcrumbs{
+	margin-bottom: 0;
+}
+/* End of slider*/
+
+/* FAQ */
+.faq ul,.faq li { list-style: none; margin:0;}
+
+.faq li{
+	padding:10px 0;
+}
+
+.faq li.q:first-child{
+	 border-top:1px #ddd solid;
+	 margin-top: 20px;
+}
+.faq li.q {
+  background: #4FC2E;
+  font-weight: bold;
+  border-bottom: 1px #ddd solid;
+  cursor: pointer;
+}
+
+.faq li.a {
+	display: none;
+	color:#000;
+	background: #f2f2f2;
+	padding: 20px 10px;
+	border-radius: 0px 0px 5px 5px;
+	margin-bottom: 10px;
+	border: 1px #ddd solid;
+	border-top: none;
+}
+.faq .a.open{
+	display: block;
+}
+/* End of FAQ */
+
+/* Stepwizard */
+.stepwizard-step p {
+    margin-top: 10px;    
+}
+
+.stepwizard-row {
+    display: table-row;
+}
+
+.stepwizard {
+    display: table;     
+    width: 100%;
+    position: relative;
+}
+
+.stepwizard-step button[disabled] {
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+}
+
+.stepwizard-row:before {
+    top: 40px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    background-color: #F7941E;
+    z-order: 0;
+}
+
+.stepwizard-step {    
+    display: table-cell;
+    text-align: center;
+    position: relative;
+    width: 25%;
+}
+.stepwizard-step p{
+	font-weight: 600;
+	font-size: 1.2em;	
+	margin-top: -3px;
+	font-family: 'Gloria Hallelujah', cursive;
+}   
+#step-slider,#step-slider p{
+	text-align: center;
+	width:100%;
+	font-size: 1.2em;
+}
+.btn-circle {
+  width: 80px;
+  height:80px;
+  text-align: center;
+  padding: 8px 10px;
+  font-size: 40px;
+  line-height: 1.428571429;
+  border-radius: 40px;
+  background:#fff;
+  color:#F7941E;
+  border: 1px solid #F7941E;
+}
+.btn-circle.active,.btn-circle:hover{
+	background:#F7941E;
+	  border: 1px solid #F7941E;
+}
+/* End of stepwizard */
+
+/* Styling of reward items */
+.reward{
+	border:1px solid #ccc;
+	border-radius: 5px;
+	border-radius: 50px 5px 5px 50px;
+	height:120px;
+	margin: 10px auto;
+	background: #fff;
+	max-width: 540px;
+	position: relative;
+}
+.reward-gain{
+	width: 100%;
+	height: 100%;
+	background: #f2f2f2;
+	position: absolute;
+	border-radius: 50px 5px 5px 50px;
+	opacity: 0;
+	transition:0.5s opacity;
+	text-align: center;
+}
+.reward-gain .button{
+	margin-top: 40px;
+	margin-left: -10px;
+}
+.reward:hover .reward-gain{
+	opacity: 1;
+}
+.reward img{
+	width:100px;
+	height:100px;
+	background: #000;
+	border-radius: 50px;
+	display: inline-block;
+	float:left;
+	margin: 10px;
+}
+.reward .text{
+	display: inline-block;
+	height:100px;
+	text-align: left;
+	max-width: 400px;
+	float: right;
+	margin: 10px;
+}
+/* End of reward items*/
+
+
+/* Modal styling */
+.mfp-fade.mfp-bg {
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: 0.9;
+}
+.mfp-fade.mfp-bg.mfp-removing {
+  opacity: 0;
+}
+.mfp-fade.mfp-wrap .mfp-content {
+  opacity: 0;
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1;
+}
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+  opacity: 0;
+}
+
+header .mfp-close-btn-in .mfp-close {
+    position: absolute;
+    color: #fff;
+    opacity: 1;
+    z-index: 99;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+}
+/* End modal styling */
+
+.all-tales{
+	background: #f2f2f2;
+	margin: 0;
+}
+.tale-button{
+	border-radius: 5px;
+	padding: 30px 0;
+	box-shadow: inset 0px -100px 200px -50px black;
+	transition:1s;
+}
+.tale-button h4{
+	font-family: 'Gloria Hallelujah', cursive;
+	text-shadow: 0 0 40px #4a4a4a;
+	transition:0.5s opacity;
+		font-size: 2em;
+}
+.tale-button:hover{
+	box-shadow: none;
+}
+.tale-button:hover h4{
+	opacity: 0;	
+}
+.no-margin-bottom{
+	margin-bottom: 0;
+}
+
+.purple-bg{
+	background:#662D91;
+	color:#fff;
+}
+.orange-bg{
+	background: #F7941E;
+	color:#fff;
+}
+.no-bg{
+	background: none;
+	border: none;
+}
+.center{
+	text-align: center;
+}
+.no-margin{
+	margin:0;
+}
+.padding-10{
+	padding: 10px;
+}
+.padding-20{
+	padding: 20px;
+}
+.padding-50{
+	padding: 50px;
+}
+
+/* bullshit
+@-ms-keyframes wiggle{0%{-ms-transform:rotate(3deg);}50%{-ms-transform:rotate(-3deg);}100%{-ms-transform:rotate(3deg);}}
+@-moz-keyframes wiggle{0%{-moz-transform:rotate(3deg);}50%{-moz-transform:rotate(-3deg);}100%{-moz-transform:rotate(3deg);}}
+@-webkit-keyframes wiggle{0%{-webkit-transform:rotate(3deg);}50%{-webkit-transform:rotate(-3deg);}100%{-webkit-transform:rotate(3deg);}}
+@keyframes wiggle{0%{transform:rotate(3deg);}50%{transform:rotate(-3deg);}100%{transform:rotate(3deg);}}
+
+
+.bookshelf--frame {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.bookshelf--frame {
+  background: tan;
+  background: url("http://static.tumblr.com/8x9m588/C8ho55ylx/bg-wood2.png"), linear-gradient(#323232, #373737 240px, #a8914e 240px, #a8914e 242px, #9A8548 242px, #9A8548 248px, #8c7942 248px, #8c7942 250px);;
+  background-size:  30px 250px;
+  border-left: 10px solid #9A8548;
+  border-right: 10px solid #9A8548;
+  text-align: center;
+}
+.bookshelf--frame{
+  border-top: 10px solid #9A8548;
+  border-bottom: 10px solid #9A8548;
+}
+.bookshelf--frame .book-wrapper {
+  display: inline-block;
+  vertical-align: bottom;
+  position: relative;
+        width:300px;
+      height:200px;
+      width:380px;
+      height:240px;
+}
+.bookshelf--frame .book-wrapper .book {
+
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+padding: 50px 0;
+box-sizing: border-box;
+  font-size: 1.4em;
+    border-radius: 5px;
+      vertical-align: bottom;
+      width:300px;
+      height:200px;
+      	text-shadow: 0 0 40px #000;
+      	
+}
+.book:hover{-ms-animation:wiggle .3s 2;-moz-animation:wiggle .3s 2;-webkit-animation:wiggle .3s 2;animation:wiggle .3s 2;}
+*/
+
+
+
+/* Share icons for article */
+.share-section{
+	margin: 40px 0;
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.c-icon {
+    width:  36px;
+    height: 36px;
+    fill: currentColor;
+    transition: .2s;
+}
+
+.c-link--facebook:hover  { color: #3b5998 }
+.c-link--twitter:hover   { color: #55acee }
+.c-link--google:hover    { color: #dd4b39 }
+.c-link--pinterest:hover { color: #bd081c }
+.c-link--instagram:hover { color: #833ab4 }
+.c-link--snapchat:hover  { color: #fbe00f }
+.c-link--facebook:hover::after  { background: #3b5998 }
+.c-link--twitter:hover::after   { background: #55acee }
+.c-link--google:hover::after    { background: #dd4b39 }
+.c-link--pinterest:hover::after { background: #bd081c }
+.c-link--instagram:hover::after { background: #833ab4 }
+.c-link--snapchat:hover::after  { background: #fbe00f }
+
+.c-link {
+    position: relative;
+    color: #bbb;
+}
+
+.c-link:not(:last-of-type) {
+    margin-right: 15px;
+}
+
+.c-tooltip::before,
+.c-tooltip::after {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -10px);
+    opacity: 0;
+    transition: .2s;
+}
+
+.c-tooltip::before {
+    content: '';
+    bottom: calc(100% + 2px);
+    border: solid 5px transparent;
+    border-top-color: currentColor;
+}
+
+.c-tooltip::after {
+    content: attr(aria-label);
+    bottom: calc(100% + 12px);
+    padding: .61em .93em;
+    font-size: .875rem;
+    color: white;
+    border-radius: 3px;
+}
+
+.c-tooltip:hover::before,
+.c-tooltip:hover::after {
+    opacity: 1;
+    transform: translate(-50%);
+}
+/* End of share icons*/
+
+/* Normal tooltip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    color: #d4d4d4;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    max-width: 500px;
+    min-width: 300px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 50%;
+    margin-left: 10px;
+    
+    /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}

@@ -1,0 +1,179 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Teach Your Story | Talespace</title>
+
+	  <!-- All CSS -->
+	  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600|Amatic+SC:400,700|Gloria+Hallelujah" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'tales/css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'tales/css/skeleton.css' %}">
+    <link rel="stylesheet" href="{% static 'tales/css/popup.css' %}">
+    <link href="{% static 'tales/css/magicsuggest-min.css" rel="stylesheet' %}">
+    <link rel="stylesheet" href="{% static 'tales/css/style.css' %}">
+    
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <router-link to="/"><img class="logo" src="{% static 'tales/assets/logo.svg' %}" alt="TaleSpace"/></router-link>
+      </header>
+      
+      <router-view></router-view>
+      
+      <!-- Bookshelf -->
+      <div class="bookshelf-frame">
+        <div class="book-wrapper">
+          <div class="book cover-image" style="background-image: url('assets/food.png')">cooking</div>
+        </div>
+      <div class="book-wrapper">
+          <div class="book cover-image" style="background-image: url('assets/food.png')">accounting</div>
+        </div>
+        <div class="book-wrapper">
+          <div class="book cover-image" style="background-image: url('assets/food.png')">football</span></div>
+        </div>
+        <div class="book-wrapper">
+          <div class="book cover-image" style="background-image: url('assets/food.png')">marketing</div>
+        </div>
+        <div class="book-wrapper">
+          <div class="book cover-image" style="background-image: url('assets/food.png')">another tale</span></div>
+        </div>
+        <div class="book-wrapper">
+          <div class="book cover-image" style="background-image: url('assets/food.png')">bla bla bla</div>
+        </div>
+      </div>
+      <!-- End of bookshelf -->
+    
+      <!-- Modal windows -->
+      <!-- Sign up as a volunteer window -->
+      <article class="blop six columns offset-by-three mfp-hide" id="volunteerRegistration">
+        <header class="cover-image center" style="background-image: url('assets/school.png')">
+          <i class="mfp-close fa fa-times" aria-hidden="true"></i>
+          <h1>Become a volunteer</h1>
+        </header>
+        
+        <section class="padding-20">
+          <p class="center">We are a sustainability volunteering program focusing on knowledge sharing & education impact. We help volunteers use their own knowledge as the tool to empower a mission towards sustainability.</p>
+          <div class="container">
+          <form class="six columns offset-by-three">
+            <label for="fullName">Your full name</label>
+            <input class="u-full-width" type="text" placeholder="" name="fullName" id="fullName">
+            <label for="emailAdress">Your email</label>
+            <input class="u-full-width" type="email" placeholder="" name="emailAdress" id="emailAdress">
+            <label for="password">Password</label>
+            <input class="u-full-width" type="password" name="password" id="password">
+            <router-link to="profile"><input class="button-primary u-pull-right" onclick="closePopup();" type="submit" value="Register" name="submit"></router-link>
+          </form>
+          </div>
+        </section>
+    
+        <footer class="orange-bg">
+          <h5 class="no-margin" style="text-align: right;"><span>#teachyourstory</span></h5>
+        </footer>
+      </article>
+      <!-- end of volunteer window -->
+      
+      <!-- Sign up as project window -->
+      <article class="blop six columns offset-by-three mfp-hide" id="projectRegistration">
+        <header class="cover-image center" style="background-image: url('assets/school.png')">
+          <i class="mfp-close fa fa-times" aria-hidden="true"></i>
+          <h1>Register as a project</h1>
+        </header>
+        
+        <section class="padding-20">
+          <p class="center">We are a sustainability volunteering program focusing on knowledge sharing & education impact. We help volunteers use their own knowledge as the tool to empower a mission towards sustainability.</p>
+          <div class="container">
+          <form class="six columns offset-by-three">
+            <label for="fullName">Your full name</label>
+            <input class="u-full-width" type="text" placeholder="" name="fullName" id="fullName">
+            <label for="emailAdress">Your email</label>
+            <input class="u-full-width" type="email" placeholder="" name="emailAdress" id="emailAdress">
+            <label for="password">Password</label>
+            <input class="u-full-width" type="password" name="password" id="password">
+            <router-link to="profile"><input class="button-primary u-pull-right" onclick="closePopup();" type="submit" value="Register" name="submit"></router-link>
+          </form>
+          </div>
+        </section>
+
+        <footer class="orange-bg">
+          <h5 class="no-margin" style="text-align: right;"><span>#teachyourstory</span></h5>
+        </footer>
+      </article>
+      <!-- End of project window -->
+
+      <!-- Dontate window -->
+      <article class="blop six columns offset-by-three mfp-hide" id="donateModal">
+        <header class="cover-image center" style="background-image: url('assets/school.png')">
+          <i class="mfp-close fa fa-times" aria-hidden="true"></i>
+          <h1>Make a donation</h1>
+        </header>
+      
+        <section class="padding-20">
+          <p class="center">We are a sustainability volunteering program focusing on knowledge sharing & education impact. We help volunteers use their own knowledge as the tool to empower a mission towards sustainability.</p>
+          <div class="container">
+            <form class="six columns offset-by-three">
+              <label for="fullName">Amount in USD</label>
+              <input class="u-full-width" type="text" placeholder="" name="fullName" id="fullName">
+              <input class="button-primary u-pull-right" type="submit" value="Continue to payment" name="submit">
+            </form>
+          </div>
+        </section>
+          
+        <footer class="orange-bg">
+          <h5 class="no-margin" style="text-align: right;"><span>#teachyourstory</span></h5>
+        </footer>
+      </article>
+      <!-- end of donate window -->
+    
+      <!-- Become paid member window -->
+      <article class="blop six columns offset-by-three mfp-hide" id="upgradeModal">
+        <header class="cover-image center" style="background-image: url('assets/school.png')">
+          <i class="mfp-close fa fa-times" aria-hidden="true"></i>
+          <h1>Upgrade your account</h1>
+        </header>
+        
+        <section class="padding-20">
+          <p class="center">To access these rewards, you need to upgrade your account.</p>
+          <div class="container">
+            <form class="six columns offset-by-three">
+              <label for="fullName">Amount in USD</label>
+              <input class="u-full-width" type="text" placeholder="" name="fullName" id="fullName">
+              <input class="button-primary u-pull-right" type="submit" value="Continue to payment" name="submit">
+            </form>
+          </div>
+        </section>
+    
+        <footer class="orange-bg">
+          <h5 class="no-margin" style="text-align: right;"><span>#teachyourstory</span></h5>
+        </footer>
+      </article>
+      <!-- end of donate window -->
+      <!-- End of modal windows -->
+      
+      {% block content %}
+      {% endblock content %}
+      
+      <footer>
+        <p>&copy; TaleSpace 2017</p>
+      </footer>
+    </div>
+    <!-- Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="{% static 'tales/js/slider.min.js' %}"></script>
+    <script src="https://use.fontawesome.com/8c31f376a3.js"></script>
+    <script src="{% static 'tales/js/popup.js' %}"></script>
+    <script src="{% static 'tales/js/magicsuggest-min.js' %}"></script>
+    <script src="{% static 'tales/js/vue.js' %}"></script>
+    <script src="{% static 'tales/js/vue-router.js' %}"></script>
+    <script src="{% static 'tales/js/index.js' %}"></script>
+  </body>
+</html>

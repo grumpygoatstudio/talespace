@@ -1,0 +1,202 @@
+{% extends "tales/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <template id="page-home">
+        <div>
+            <div class="row">
+                <section id="tagline-slider" class="eight columns padding-50" style="min-height:200px;">
+                    <h3>Why just stop at volunteering,<br/>teach your story. <span style="color:#662D91;">#sharewhatyouknow</span></h3>
+                    <!--<h3 data-slidr="2">It is a space where we recognize that everybody’s story or prior knowledge can play a part towards making a change.</h3>
+                    <h3 data-slidr="3">This program is open to all and designed to reach rural and underprivileged communities. Help us, spread the word, #sharewhatyouknow #teachyourstory</h3>-->
+                </section>
+                <section class="four columns sign-up-box orange-bg padding-20 center" style="min-height:200px;">
+                    <h5>Start changing the world</h5>
+                    <a href="#volunteerRegistration" class="open-popup-link button button-primary">Sign up as a volunteer</a>
+                    <a href="#projectRegistration" class="open-popup-link button button-primary">Sign up as a project</a>
+                </section>
+            </div>
+        
+            <div class="row">
+                <div class="stepwizard">
+                    <div class="stepwizard-row">
+                        <div class="stepwizard-step">
+                            <button type="button" class="btn-circle active" data-steptrigger="travel"><i class="fa fa-plane" aria-hidden="true"></i></button>
+                            <p>travel</p>
+                        </div>
+                        <div class="stepwizard-step">
+                            <button type="button" class="btn btn-primary btn-circle" data-steptrigger="teach"><i class="fa fa-graduation-cap" aria-hidden="true"></i></button>
+                            <p>teach</p>
+                        </div>
+                        <div class="stepwizard-step">
+                            <button type="button" class="btn btn-primary btn-circle" data-steptrigger="rewards"><i class="fa fa-money" aria-hidden="true"></i></button>
+                            <p>rewards</p>
+                        </div>
+                        <div class="stepwizard-step">
+                            <button type="button" class="btn btn-default btn-circle" data-steptrigger="share"><i class="fa fa-book" aria-hidden="true"></i></button>
+                            <p>share</p>
+                        </div> 
+                    </div>
+                </div>
+                <div id="step-slider">
+                    <p data-slidr="travel">Travel the world and make an educational impact</p>
+                    <p data-slidr="teach">Teach your experiences, we help you  leave behind your knowledge while volunteering</p>
+                    <p data-slidr="rewards">Get rewards while you travel so you can prolong your impactful journey</p>
+                    <p data-slidr="share">Share your knowledge with us, so we can create education accessibility for all</p>
+                </div>
+            </div>
+            
+            <div class="row no-margin-bottom">
+                <div class="twelve columns">
+                    <section id="home-slider" class="slider">
+                        <div data-slidr="reading" class="cover-image" style="background-image: url("{% static 'assets/reading.png' %}")"><h2>the tale of</h2><h1>reading</h1><router-link to="story/2/reading"><button class="button">read this tale</button></router-link></div>
+                        <div data-slidr="work" class="cover-image" style="background-image: url("{% static 'assets/work.png' %}")"><h2>the tale of</h2><h1>accounting</h1><router-link to="story/1/accounting"><button class="button">read this tale</button></router-link></div>
+                    </section>
+                </div>
+            </div>
+        
+            <section class="all-tales padding-10 center">
+                <a class="button no-margin-bottom tales-trigger">Explore all tales</a>
+                <div class="tales-container hidden">
+                    <div class="row">
+                        <div class="tale-button cover-image four columns" style="background-image: url("{% static 'assets/reading.png' %}")"><h4>reading</h4></div>
+                        <div class="tale-button cover-image four columns" style="background-image: url("{% static 'assets/work.png' %}")"><h4>accounting</h4></div>
+                        <div class="tale-button cover-image four columns" style="background-image: url("{% static 'assets/music_web.png' %}")"><h4>making music</h4></div>
+                    </div>
+                    <div class="row">
+                        <div class="tale-button cover-image four columns" style="background-image: url("{% static 'assets/music_web.png' %}")"><h4>dolor sit amet</h4></div>
+                        <div class="tale-button cover-image four columns" style="background-image: url("{% static 'assets/food.png' %}")"><h4>eating healthy</h4></div>
+                        <div class="tale-button cover-image four columns" style="background-image: url("{% static 'assets/work.png' %}")"><h4>lorem ipsum</h4></div>
+                    </div>
+                    <div class="row">
+                        <div class="tale-button cover-image four columns" style="background-image: url("{% static 'assets/music_web.png' %}")"><h4>dolor sit amet</h4></div>
+                        <div class="tale-button cover-image four columns" style="background-image: url("{% static 'assets/food.png' %}")"><h4>test hallo</h4></div>
+                        <div class="tale-button cover-image four columns" style="background-image: url("{% static 'assets/work.png' %}")"><h4>bla bla</h4></div>
+                    </div>
+        
+                </div>
+            </section>
+        
+            <div class="row">
+                <section class="eight columns offset-by-two">
+                    <h4>Frequently Asked Questions</h4>
+                    <p class="no-margin hidden"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus maximus, purus semper pellentesque auctor, mi felis faucibus lectus, eu rutrum purus enim nec purus. Sed fringilla, </p>
+                    <ul class="faq">
+                        <li class="q">What is Talespace?</li>
+                        <li class="a open"><a href="#donateModal" class="open-popup-link">Dontate</a> TaleSpace is a sustainability educational volunteering program focusing on knowledge sharing & education impact. We help volunteers use their own knowledge as the tool to empower a mission towards sustainability. . It is a space where everybody’s experience or story plays a part. A story of an individual can be shared as an applicable skill in a community. This guided program is open to all and designed to reach rural and underprivileged communities.</li>
+                        
+                        <li class="q">What is our mission?</li>
+                        <li class="a">To create “spaces” all around the world with the reach of sustainable knowledge and to enable travelers/to-be-travelers, start sharing sustainable knowledge & be rewarded while doing so.</li>
+                        
+                        <li class="q">How does it work?</li>
+                        <li class="a">All is welcome to join in our program. We will guide you on what prior knowledge you have and help transfer it as a skill to impact another. A volunteer who joins us is called a TaleMaster. A TaleMaster will be matched to hosts called Missions according to there knowledge or skill.</li>
+                        
+                        <li class="q">Can I help in other ways?</li>
+                        <li class="a">Yes, support our education movement by sharing posts from our social media pages, share our hashtags #sharewhatyouknow #teachyourstory; Tell your friends or family to share their knowledge with us online, so we can create more open source knowledge for all. We also provide specialty training and workshops. Our mandate; with every service we offer, upto 80% of its proceeds will be channeled to our featured monthly missions. Contact us at marketing@talespace.co to know more or get your CSR Team involved in this.</li>
+                        
+                        <li class="q">Why do we call our volunteers TaleMasters?</li>
+                        <li class="a">Our program aims to highlight that today volunteers can offer more & leave an impact if guided. We want to guide you to achieve this. We believe every individual has the knowledge to offer base on their different backgrounds and experiences. This means our stories can be valuable, thus the name a TaleMaster. Convince? Join us now, if you have a skill or knowledge, or if you would love to try your hands in teaching and sharing it. We want to reward you too! With your help we would like to build a global knowledge sharing community and to reach out to the underprivileged.</li>
+                        
+                        <li class="q">How do you define the Missions, how do i qualify if i have a project with social good objective but without an NGO license?</li>
+                        <li class="a">If you are have a social good project (without license) without a team, an NGO of any scale, a small local business, or even a social enterprise like us, you’re definitely a Mission that fits here. Let us know by signing up, what knowledge or skills you need for your project. We will then match you with our TaleMasters. You will get to lessen your challenges with new skills and knowledge from them. We are different because we guide the TaleMasters to leave behind their knowledge for you to be empowered and continue growing your project.</li>
+                    </ul>
+                </section>
+            </div>
+            </div>
+    
+            </template>
+            <template id="page-profile">
+            <div>
+            <div class="row">
+                <section class="six columns offset-by-three">
+                    <h2>Hey there Daniël.</h2>
+                    <p class="no-margin" style="font-size:1.1em;margin-top:5px;"><a href="#">Edit profile</a> | <a href="#">Log out</a></p>
+                    <p></p>
+                    <br/>
+                    <h5>Complete your profile</h5>
+                    <p>The more complete your profile is, the better your matches with our projects will be.</p>
+                    <form class="">
+                        <label for="fullName">Your interests</label>
+                        <div id="magicSuggest"></div>
+                        <input class="button-primary u-pull-right" type="submit" value="Save interests" name="submit">
+                    </form>
+                </section>
+            </div>
+
+            <div class="row">
+                <section class="six columns offset-by-three">
+                    <h5>Create a tale</h5>
+                    <p class="no-margin">Share your knowledge with the rest of the world.</p>
+                    <br/>
+                    <form class="">
+                        <label for="fullName">The title of your story
+                            <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
+                                <span class="tooltiptext">The title should be bla blabla</span>
+                            </div>
+                        </label>
+                        <input class="u-full-width" type="text" placeholder="" name="storyTitle" id="storyTitle">
+            
+                        <label for="emailAdress">What?
+                            <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
+                                <span class="tooltiptext">sdfjdsdhjfsdjhkfsdfsbkt</span>
+                            </div>
+                        </label>
+                        <textarea class="u-full-width" type="email" placeholder="" name="emailAdress" id="emailAdress" style="height:100px;"></textarea>
+                        
+                        <label for="emailAdress">Where?
+                            <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
+                                <span class="tooltiptext">sdfjdsdhjfsdjhkfsdfsbkt</span>
+                            </div>					
+                        </label>
+                        <textarea class="u-full-width" type="email" placeholder="" name="emailAdress" id="emailAdress" style="height:100px;"></textarea>
+                        
+                        <label for="emailAdress">Quick tip</label>
+                        <textarea class="u-full-width" type="email" placeholder="" name="emailAdress" id="emailAdress" style="height:50px;"></textarea>
+                        
+                        <input class="button-primary u-pull-right" type="submit" value="Save story" name="submit">
+                    </form>
+                </section>
+            </div>
+                
+            <div class="row">
+                <section class="six columns offset-by-three">
+                    <h4>Rewards</h4>
+                    <p class="no-margin">By joining our program you get access to exclusive deals to make your stay abroad more pleasant.</p>
+                    <div class="reward">
+                        <div class="reward-gain">
+                            <img src="assets/grab.png" alt="Holla"/>
+                            <a href="#" class="button">Claim this reward</a>
+                        </div>
+                        <img src="assets/grab.png" alt="Holla"/>
+                        <div class="text">
+                            <h5>200 THB Off For Your First Trip</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus maximus, purus semper pellentesque auctor.</p>
+                        </div>
+                    </div>
+                    <div class="reward">
+                        <div class="reward-gain">
+                            <img src="assets/mcdonalds.png" alt="Holla"/>
+                            <a href="#" class="button">Claim this reward</a>
+                        </div>
+                        <img src="assets/mcdonalds.png" alt="Holla"/>
+                        <div class="text">
+                            <h5>Free Ice Cream Cone</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus maximus, purus semper pellentesque auctor.</p>
+                        </div>
+                    </div>
+                    <div class="reward">
+                        <div class="reward-gain">
+                            <img src="assets/seveneleven.png" alt="Holla"/>
+                            <a href="#" class="button">Claim this reward</a>
+                        </div>
+                        <img src="assets/seveneleven.png" alt="Holla"/>
+                        <div class="text">
+                            <h5>20% Off At First Purchase</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus maximus, purus semper pellentesque auctor.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </template>
+{% endblock content %}
