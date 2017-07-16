@@ -10,7 +10,6 @@ def index(request):
         # 'tales_list': tales_list,
     }
     return render(request, 'tales/index.html', context)
-    # return HttpResponse("Hello, world! You're at the tales index.")
 
 
 def tales_list(request):
@@ -23,6 +22,5 @@ def tale_details(request, tale_id):
     return HttpResponse("This is the Tale Details Page --> %s!" % tale_id)
 
 def user_details(request, user_id):
-    user = User.object
-    return render(request, 'tales/user_profile.html', {'user': user})
-    # return HttpResponse("This is the User Details Page --> %s!" % user_id)
+    userobj = User.objects.get(id=int(user_id))
+    return render(request, 'tales/user_profile.html', {'user': userobj})
