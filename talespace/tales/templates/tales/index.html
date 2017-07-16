@@ -49,8 +49,8 @@
             <div class="row no-margin-bottom">
                 <div class="twelve columns">
                     <section id="home-slider" class="slider">
-                        <div data-slidr="reading" class="cover-image" style="background-image: url("{% static 'assets/reading.png' %}")"><h2>the tale of</h2><h1>reading</h1><router-link to="story/2/reading"><button class="button">read this tale</button></router-link></div>
-                        <div data-slidr="work" class="cover-image" style="background-image: url("{% static 'assets/work.png' %}")"><h2>the tale of</h2><h1>accounting</h1><router-link to="story/1/accounting"><button class="button">read this tale</button></router-link></div>
+                        <div data-slidr="reading" class="cover-image" style="background-image: url('{% static "assets/reading.png" %}')"><h2>the tale of</h2><h1>reading</h1><router-link to="story/2/reading"><button class="button">read this tale</button></router-link></div>
+                        <div data-slidr="work" class="cover-image" style="background-image: url('{% static "assets/work.png" %}')"><h2>the tale of</h2><h1>accounting</h1><router-link to="story/1/accounting"><button class="button">read this tale</button></router-link></div>
                     </section>
                 </div>
             </div>
@@ -59,19 +59,19 @@
                 <a class="button no-margin-bottom tales-trigger">Explore all tales</a>
                 <div class="tales-container hidden">
                     <div class="row">
-                        <div class="tale-button cover-image four columns" style="background-image: url("{% static 'assets/reading.png' %}")"><h4>reading</h4></div>
-                        <div class="tale-button cover-image four columns" style="background-image: url("{% static 'assets/work.png' %}")"><h4>accounting</h4></div>
-                        <div class="tale-button cover-image four columns" style="background-image: url("{% static 'assets/music_web.png' %}")"><h4>making music</h4></div>
+                        <div class="tale-button cover-image four columns" style="background-image: url('{% static "tales/assets/reading.png" %}')"><h4>reading</h4></div>
+                        <div class="tale-button cover-image four columns" style="background-image: url('{% static "tales/assets/work.png" %}')"><h4>accounting</h4></div>
+                        <div class="tale-button cover-image four columns" style="background-image: url('{% static "tales/assets/music_web.png" %}')"><h4>making music</h4></div>
                     </div>
                     <div class="row">
-                        <div class="tale-button cover-image four columns" style="background-image: url("{% static 'assets/music_web.png' %}")"><h4>dolor sit amet</h4></div>
-                        <div class="tale-button cover-image four columns" style="background-image: url("{% static 'assets/food.png' %}")"><h4>eating healthy</h4></div>
-                        <div class="tale-button cover-image four columns" style="background-image: url("{% static 'assets/work.png' %}")"><h4>lorem ipsum</h4></div>
+                        <div class="tale-button cover-image four columns" style="background-image: url('{% static "tales/assets/music_web.png" %}')"><h4>dolor sit amet</h4></div>
+                        <div class="tale-button cover-image four columns" style="background-image: url('{% static "tales/assets/food.png" %}')"><h4>eating healthy</h4></div>
+                        <div class="tale-button cover-image four columns" style="background-image: url('{% static "tales/assets/work.png" %}')"><h4>lorem ipsum</h4></div>
                     </div>
                     <div class="row">
-                        <div class="tale-button cover-image four columns" style="background-image: url("{% static 'assets/music_web.png' %}")"><h4>dolor sit amet</h4></div>
-                        <div class="tale-button cover-image four columns" style="background-image: url("{% static 'assets/food.png' %}")"><h4>test hallo</h4></div>
-                        <div class="tale-button cover-image four columns" style="background-image: url("{% static 'assets/work.png' %}")"><h4>bla bla</h4></div>
+                        <div class="tale-button cover-image four columns" style="background-image: url('{% static "tales/assets/music_web.png" %}')"><h4>dolor sit amet</h4></div>
+                        <div class="tale-button cover-image four columns" style="background-image: url('{% static "tales/assets/food.png" %}')"><h4>test hallo</h4></div>
+                        <div class="tale-button cover-image four columns" style="background-image: url('{% static "tales/assets/work.png" %}')"><h4>bla bla</h4></div>
                     </div>
         
                 </div>
@@ -102,101 +102,6 @@
                     </ul>
                 </section>
             </div>
-            </div>
-    
-            </template>
-            <template id="page-profile">
-            <div>
-            <div class="row">
-                <section class="six columns offset-by-three">
-                    <h2>Hey there Daniël.</h2>
-                    <p class="no-margin" style="font-size:1.1em;margin-top:5px;"><a href="#">Edit profile</a> | <a href="#">Log out</a></p>
-                    <p></p>
-                    <br/>
-                    <h5>Complete your profile</h5>
-                    <p>The more complete your profile is, the better your matches with our projects will be.</p>
-                    <form class="">
-                        <label for="fullName">Your interests</label>
-                        <div id="magicSuggest"></div>
-                        <input class="button-primary u-pull-right" type="submit" value="Save interests" name="submit">
-                    </form>
-                </section>
-            </div>
-
-            <div class="row">
-                <section class="six columns offset-by-three">
-                    <h5>Create a tale</h5>
-                    <p class="no-margin">Share your knowledge with the rest of the world.</p>
-                    <br/>
-                    <form class="">
-                        <label for="fullName">The title of your story
-                            <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                                <span class="tooltiptext">The title should be bla blabla</span>
-                            </div>
-                        </label>
-                        <input class="u-full-width" type="text" placeholder="" name="storyTitle" id="storyTitle">
-            
-                        <label for="emailAdress">What?
-                            <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                                <span class="tooltiptext">sdfjdsdhjfsdjhkfsdfsbkt</span>
-                            </div>
-                        </label>
-                        <textarea class="u-full-width" type="email" placeholder="" name="emailAdress" id="emailAdress" style="height:100px;"></textarea>
-                        
-                        <label for="emailAdress">Where?
-                            <div class="tooltip"><i class="fa fa-info-circle" aria-hidden="true"></i>
-                                <span class="tooltiptext">sdfjdsdhjfsdjhkfsdfsbkt</span>
-                            </div>					
-                        </label>
-                        <textarea class="u-full-width" type="email" placeholder="" name="emailAdress" id="emailAdress" style="height:100px;"></textarea>
-                        
-                        <label for="emailAdress">Quick tip</label>
-                        <textarea class="u-full-width" type="email" placeholder="" name="emailAdress" id="emailAdress" style="height:50px;"></textarea>
-                        
-                        <input class="button-primary u-pull-right" type="submit" value="Save story" name="submit">
-                    </form>
-                </section>
-            </div>
-                
-            <div class="row">
-                <section class="six columns offset-by-three">
-                    <h4>Rewards</h4>
-                    <p class="no-margin">By joining our program you get access to exclusive deals to make your stay abroad more pleasant.</p>
-                    <div class="reward">
-                        <div class="reward-gain">
-                            <img src="assets/grab.png" alt="Holla"/>
-                            <a href="#" class="button">Claim this reward</a>
-                        </div>
-                        <img src="assets/grab.png" alt="Holla"/>
-                        <div class="text">
-                            <h5>200 THB Off For Your First Trip</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus maximus, purus semper pellentesque auctor.</p>
-                        </div>
-                    </div>
-                    <div class="reward">
-                        <div class="reward-gain">
-                            <img src="assets/mcdonalds.png" alt="Holla"/>
-                            <a href="#" class="button">Claim this reward</a>
-                        </div>
-                        <img src="assets/mcdonalds.png" alt="Holla"/>
-                        <div class="text">
-                            <h5>Free Ice Cream Cone</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus maximus, purus semper pellentesque auctor.</p>
-                        </div>
-                    </div>
-                    <div class="reward">
-                        <div class="reward-gain">
-                            <img src="assets/seveneleven.png" alt="Holla"/>
-                            <a href="#" class="button">Claim this reward</a>
-                        </div>
-                        <img src="assets/seveneleven.png" alt="Holla"/>
-                        <div class="text">
-                            <h5>20% Off At First Purchase</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus maximus, purus semper pellentesque auctor.</p>
-                        </div>
-                    </div>
-                </section>
-            </div>
         </div>
     </template>
-{% endblock content %}
+{% endblock %}
