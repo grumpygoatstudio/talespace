@@ -6,25 +6,21 @@ from .models import Tale
 
 
 def index(request):
-    context = {
-        # 'tales_list': tales_list,
-    }
-    return render(request, 'tales/index.html', context)
+    return render(request, 'tales/index.html')
 
 def tales_list(request):
-    # tales_list = Tale.objects
-    # return render(request, 'tales/tales_list.html', {})
-    return HttpResponse("This is the Tales List Page!")
+    tales = Tale.objects.all()
+    context = {
+        'tales': tales,
+    }
+    return render(request, 'tales/tales_list.html', context)
 
 def tale_details(request, tale_id):
     tale = Tale.objects.get(id=int(tale_id))
     context = {
-        'tale': tale, 
-        'author_name': tale.author.get_full_name(),
-        # 'author_country': tale.author.country
+        'tale': tale,
     }
     return render(request, 'tales/tale_details.html', context)
-    # return HttpResponse("This is the Tale Details Page --> %s!" % tale_id)
 
 def user_profile(request, user_id):
     if request.user.is_authenticated():
@@ -34,3 +30,4 @@ def user_profile(request, user_id):
         return render(request, 'tales/user_profile.html', context)
     else:
         return HttpResponse("User is not logged in or does not match attempted Profile ID --> %s!" % user_id)
+    

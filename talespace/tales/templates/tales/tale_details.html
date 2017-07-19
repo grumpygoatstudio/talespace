@@ -1,5 +1,6 @@
 {% extends "tales/base.html" %}
 {% load staticfiles %}
+
 {% block content %}
 <template id="page-story-reading">
 		<article>
@@ -9,10 +10,10 @@
 			</header>
 		    <div class="row">
 				<section class="tale six columns offset-by-three">
-					{{ tale.contents }}
+					{{ tale.content | safe }}
 					<hr>
 					<p>
-						<b>Tale by {{ author_name }}, CANADA</b>.
+						<b>Tale by {{ tale.author_id.get_full_name }}, CANADA</b>.
 						<!-- <b>Tale by {{ author_name }}, {{ author_country }}</b>.  -->
 						Thank you for sharing this knowledge during your volunteering with us! 
 						If you would like to share your knowledge or teach your story as well, 
