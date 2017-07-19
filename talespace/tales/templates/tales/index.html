@@ -18,39 +18,44 @@
             </div>
         
             <div class="row">
-                <div class="stepwizard">
-                    <div class="stepwizard-row">
-                        <div class="stepwizard-step">
-                            <button type="button" class="btn-circle active" data-steptrigger="travel"><i class="fa fa-plane" aria-hidden="true"></i></button>
-                            <p>travel</p>
-                        </div>
-                        <div class="stepwizard-step">
-                            <button type="button" class="btn btn-primary btn-circle" data-steptrigger="teach"><i class="fa fa-graduation-cap" aria-hidden="true"></i></button>
-                            <p>teach</p>
-                        </div>
-                        <div class="stepwizard-step">
-                            <button type="button" class="btn btn-primary btn-circle" data-steptrigger="rewards"><i class="fa fa-money" aria-hidden="true"></i></button>
-                            <p>rewards</p>
-                        </div>
-                        <div class="stepwizard-step">
-                            <button type="button" class="btn btn-default btn-circle" data-steptrigger="share"><i class="fa fa-book" aria-hidden="true"></i></button>
-                            <p>share</p>
-                        </div> 
-                    </div>
-                </div>
-                <div id="step-slider">
-                    <p data-slidr="travel">Travel the world and make an educational impact</p>
-                    <p data-slidr="teach">Teach your experiences, we help you  leave behind your knowledge while volunteering</p>
-                    <p data-slidr="rewards">Get rewards while you travel so you can prolong your impactful journey</p>
-                    <p data-slidr="share">Share your knowledge with us, so we can create education accessibility for all</p>
-                </div>
-            </div>
+				<div class="stepwizard">
+				    <div class="stepwizard-row">
+				        <div class="stepwizard-step">
+				            <button type="button" class="btn-circle active" data-steptrigger="travel"><i class="fa fa-plane" aria-hidden="true"></i></button>
+				            <p>travel</p>
+				        </div>
+				        <div class="stepwizard-step">
+				            <button type="button" class="btn btn-primary btn-circle" data-steptrigger="teach"><i class="fa fa-graduation-cap" aria-hidden="true"></i></button>
+				            <p>teach</p>
+				        </div>
+				        <div class="stepwizard-step">
+				            <button type="button" class="btn btn-primary btn-circle" data-steptrigger="rewards"><i class="fa fa-money" aria-hidden="true"></i></button>
+				            <p>rewards</p>
+				        </div>
+				        <div class="stepwizard-step">
+				            <button type="button" class="btn btn-default btn-circle" data-steptrigger="share"><i class="fa fa-book" aria-hidden="true"></i></button>
+				            <p>share</p>
+				        </div> 
+				    </div>
+				</div>
+				<div id="step-slider">
+			    	<p data-slidr="travel">Travel the world and make an educational impact</p>
+					<p data-slidr="teach">Teach your experiences, we help you  leave behind your knowledge while volunteering</p>
+					<p data-slidr="rewards">Get rewards while you travel so you can prolong your impactful journey</p>
+					<p data-slidr="share">Share your knowledge with us, so we can create education accessibility for all</p>
+			    </div>
+		    </div>
             
             <div class="row no-margin-bottom">
                 <div class="twelve columns">
                     <section id="home-slider" class="slider">
-                        <div data-slidr="reading" class="cover-image" style="background-image: url('{% static "assets/reading.png" %}')"><h2>the tale of</h2><h1>reading</h1><router-link to="story/2/reading"><button class="button">read this tale</button></router-link></div>
-                        <div data-slidr="work" class="cover-image" style="background-image: url('{% static "assets/work.png" %}')"><h2>the tale of</h2><h1>accounting</h1><router-link to="story/1/accounting"><button class="button">read this tale</button></router-link></div>
+                        {% for tale in tales|slice:"0:1" %}
+                            <div data-slidr="reading" class="cover-image" style="background-image: url('static/tales/{{tale.header_img}}')">
+                                <h2>The Tale of</h2>
+                                <h1>{{ tale.title }}</h1>
+                                <a to="/tales/{{ tale.id }}"><button class="button">Read This Tale</button></a>
+                            </div>
+                        {% endfor %}
                     </section>
                 </div>
             </div>
@@ -59,21 +64,14 @@
                 <a class="button no-margin-bottom tales-trigger">Explore all tales</a>
                 <div class="tales-container hidden">
                     <div class="row">
-                        <div class="tale-button cover-image four columns" style="background-image: url('{% static "tales/assets/reading.png" %}')"><h4>reading</h4></div>
-                        <div class="tale-button cover-image four columns" style="background-image: url('{% static "tales/assets/work.png" %}')"><h4>accounting</h4></div>
-                        <div class="tale-button cover-image four columns" style="background-image: url('{% static "tales/assets/music_web.png" %}')"><h4>making music</h4></div>
+                    {% for tale in tales %}
+                        {% if forloop.counter|divisibleby:"4" %}
+                        </div>    
+                        <div class="row">
+                        {% endif %}
+                        <div class="tale-button cover-image four columns" style="background-image: url('static/tales/{{tale.header_img}}')"><h4>{{tale.title}}</h4></div>
+                    {% endfor %}
                     </div>
-                    <div class="row">
-                        <div class="tale-button cover-image four columns" style="background-image: url('{% static "tales/assets/music_web.png" %}')"><h4>dolor sit amet</h4></div>
-                        <div class="tale-button cover-image four columns" style="background-image: url('{% static "tales/assets/food.png" %}')"><h4>eating healthy</h4></div>
-                        <div class="tale-button cover-image four columns" style="background-image: url('{% static "tales/assets/work.png" %}')"><h4>lorem ipsum</h4></div>
-                    </div>
-                    <div class="row">
-                        <div class="tale-button cover-image four columns" style="background-image: url('{% static "tales/assets/music_web.png" %}')"><h4>dolor sit amet</h4></div>
-                        <div class="tale-button cover-image four columns" style="background-image: url('{% static "tales/assets/food.png" %}')"><h4>test hallo</h4></div>
-                        <div class="tale-button cover-image four columns" style="background-image: url('{% static "tales/assets/work.png" %}')"><h4>bla bla</h4></div>
-                    </div>
-        
                 </div>
             </section>
         

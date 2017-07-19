@@ -6,7 +6,11 @@ from .models import Author, Tale
 
 
 def index(request):
-    return render(request, 'tales/index.html')
+    tales = Tale.objects.all()
+    context = {
+        'tales': tales,
+    }
+    return render(request, 'tales/index.html', context)
 
 def tales_list(request):
     tales = Tale.objects.all()

@@ -16,7 +16,7 @@ var appdata = {
 
 // Setting up view components for Vue
 const home= {
-	template: '#page-home',
+	template: '',
 	data: function() {
 	    return appdata;
 	},
@@ -65,14 +65,11 @@ const home= {
 			if(talesOpen){
 				$(this).html('Explore all tales');
 				talesOpen = false;
-			}else{
+			} else {
 				$(this).html('Close all tales');
 				talesOpen = true;
-				$('html, body').animate({
-				    scrollTop: $("#home-slider").offset().top-50
-				}, 500);
-			}
-			$('.tales-container').slideToggle(500);
+			};
+			$('.tales-container').toggle(500);
 		});
 		
 		//Question handler
