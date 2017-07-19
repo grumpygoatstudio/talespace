@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from django.contrib.auth.models import User
-from .models import Tale
+from .models import Author, Tale
 
 
 def index(request):

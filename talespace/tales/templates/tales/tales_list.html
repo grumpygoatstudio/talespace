@@ -14,17 +14,22 @@
 								<th></th>
 								<th>Title</th>
 								<th>Author</th>
-								<th>Country</th>
+								<th>Location</th>
 								<th>Details</th>
 							</tr>
 						</thead>
 						<tbody>
 							{% for tale in tales %}
 								<tr>
-									<td><img src="{{ tale.header_img }}" alt="tale imgage"></td>
+									<td>
+										<img src="/static/tales{{ tale.header_img }}" 
+												alt="tale image" 
+												width='100px' 
+												height='100px'>
+									</td>
 									<td>{{ tale.title }}</td>
-									<td>{{ tale.author_id.get_full_name }}</td>
-									<td>CANADA</td>
+									<td>{{ tale.author.user.get_full_name }}</td>
+									<td><!--{{ tale.author.city }}, -->{{ tale.author.country.name }}</td>
 									<td>
 										<a href="/tales/{{ tale.id }}"><button class="btn btn-md btn-info">Details</button></a>
 									</td>

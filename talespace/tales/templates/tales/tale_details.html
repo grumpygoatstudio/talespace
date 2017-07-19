@@ -4,7 +4,7 @@
 {% block content %}
 <template id="page-story-reading">
 		<article>
-			<header class="cover-image article-header" style="background-image: url('{% static "{{ tale.header_img }}" %}')">
+			<header class="cover-image article-header" style="background-image: url('/static/tales{{ tale.header_img }}')">
 				<h2>The Tale of </h2>
 				<h1>{{ tale.title }}</h1>
 			</header>
@@ -13,7 +13,7 @@
 					{{ tale.content | safe }}
 					<hr>
 					<p>
-						<b>Tale by {{ tale.author_id.get_full_name }}, CANADA</b>.
+						<b>Tale by {{ tale.author.user.get_full_name }}, {{ tale.author.country.name }}</b>.
 						<!-- <b>Tale by {{ author_name }}, {{ author_country }}</b>.  -->
 						Thank you for sharing this knowledge during your volunteering with us! 
 						If you would like to share your knowledge or teach your story as well, 
