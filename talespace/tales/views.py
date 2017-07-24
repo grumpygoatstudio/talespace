@@ -38,7 +38,6 @@ def user_add(request):
             user.email = form.cleaned_data['email']
             user.password = form.cleaned_data['password']
             user.save()
-            request.user = user
             context = {
                 'user': user,
             }
@@ -49,11 +48,13 @@ def user_add(request):
         return HttpResponse("Submit form failed! :(")
 
 def user_profile(request, user_id):
-    if request.user.is_authenticated():
-        context = {
-            'user': request.user,
-        }
-        return render(request, 'tales/user_profile.html', context)
+    if (request.user.is_authenticated() and request.user.id == int(user_id)) or request.user.has_perm('views.user_profile'):
+        try:
+            context = {
+                'user': User.objects.get(id=int(user_id))
+            }
+            return render(request, 'tales/user_profile.html', context)
+        except:
+            return HttpResponse("User lookup failed for given Profile ID --> %s!" % user_id)
     else:
         return HttpResponse("User is not logged in or does not match attempted Profile ID --> %s!" % user_id)
-    
