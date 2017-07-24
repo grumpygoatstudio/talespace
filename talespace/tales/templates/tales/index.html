@@ -69,7 +69,9 @@
                         </div>    
                         <div class="row">
                         {% endif %}
-                        <div class="tale-button cover-image four columns" style="background-image: url('static/tales/{{tale.header_img}}')"><h4>{{tale.title}}</h4></div>
+                        <div class="tale-button cover-image four columns" style="background-image: url('static/tales/{{tale.header_img}}')">
+                            <a href="/tales/{{ tale.id }}"><h4>{{tale.title}}</h4></a>
+                        </div>
                     {% endfor %}
                     </div>
                 </div>

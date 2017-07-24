@@ -1,0 +1,17 @@
+{% extends "tales/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <template id="page-profile">
+        <div>
+            <div class="row">
+                <section class="six columns offset-by-three">
+                    <h2>Hey there, {{ user.first_name }}!</h2>
+                    <hr>
+                    <p>Thanks for taking the first step and signing up for TaleSpace. We're so thrilled to have you here with us in our quest to change the world.</p>
+                    <p>Please take some time to review and complete your <a href="/user/{{ user.id }}">User Profile</a>. A complete profile helps us match you with relevent opportunites.</p>
+                </section>
+            </div>
+        </div>
+    </template>
+{% endblock %}

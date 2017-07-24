@@ -64,16 +64,17 @@
         <section class="padding-20">
           <p class="center">We are a sustainability volunteering program focusing on knowledge sharing & education impact. We help volunteers use their own knowledge as the tool to empower a mission towards sustainability.</p>
           <div class="container">
-          <form class="six columns offset-by-three">
-            <label for="firstName">First name</label>
-            <input class="u-full-width" type="text" placeholder="" name="firstName" id="firstName">
-            <label for="lastName">Last name</label>
-            <input class="u-full-width" type="text" placeholder="" name="lastName" id="lastName">
-            <label for="emailAdress">Email</label>
-            <input class="u-full-width" type="email" placeholder="" name="emailAdress" id="emailAdress">
+          <form class="six columns offset-by-three"  action="/user/" method="POST">
+            {% csrf_token %}
+            <label for="first_name">First name</label>
+            <input class="u-full-width" type="text" placeholder="" name="first_name" id="first_name">
+            <label for="last_name">Last name</label>
+            <input class="u-full-width" type="text" placeholder="" name="last_name" id="last_name">
+            <label for="email">Email</label>
+            <input class="u-full-width" type="email" placeholder="" name="email" id="email">
             <label for="password">Password</label>
             <input class="u-full-width" type="password" name="password" id="password">
-            <a to="profile"><input class="button-primary u-pull-right" onclick="closePopup();" type="submit" value="Register" name="submit"></a>
+            <input class="button-primary u-pull-right" onclick="closePopup();" type="submit" value="Register" name="submit">
           </form>
           </div>
         </section>
@@ -94,16 +95,17 @@
         <section class="padding-20">
           <p class="center">We are a sustainability volunteering program focusing on knowledge sharing & education impact. We help volunteers use their own knowledge as the tool to empower a mission towards sustainability.</p>
           <div class="container">
-          <form class="six columns offset-by-three">
-            <label for="firstName">First name</label>
-            <input class="u-full-width" type="text" placeholder="" name="firstName" id="firstName">
-            <label for="lastName">Last name</label>
-            <input class="u-full-width" type="text" placeholder="" name="lastName" id="lastName">
-            <label for="emailAdress">Email</label>
-            <input class="u-full-width" type="email" placeholder="" name="emailAdress" id="emailAdress">
+          <form class="six columns offset-by-three" action="/user/" method="POST">
+            {% csrf_token %}
+            <label for="first_name">First name</label>
+            <input class="u-full-width" type="text" placeholder="" name="first_name" id="first_name">
+            <label for="last_name">Last name</label>
+            <input class="u-full-width" type="text" placeholder="" name="last_name" id="last_name">
+            <label for="email">Email</label>
+            <input class="u-full-width" type="email" placeholder="" name="email" id="email">
             <label for="password">Password</label>
             <input class="u-full-width" type="password" name="password" id="password">
-            <a to="profile"><input class="button-primary u-pull-right" onclick="closePopup();" type="submit" value="Register" name="submit"></a>
+            <input class="button-primary u-pull-right" onclick="closePopup();" type="submit" value="Register" name="submit">
           </form>
           </div>
         </section>
@@ -124,7 +126,8 @@
         <section class="padding-20">
           <p class="center">We are a sustainability volunteering program focusing on knowledge sharing & education impact. We help volunteers use their own knowledge as the tool to empower a mission towards sustainability.</p>
           <div class="container">
-            <form class="six columns offset-by-three">
+            <form class="six columns offset-by-three" action="/donate/" method="POST">
+              {% csrf_token %}
               <label for="fullName">Amount in USD</label>
               <input class="u-full-width" type="text" placeholder="" name="fullName" id="fullName">
               <input class="button-primary u-pull-right" type="submit" value="Continue to payment" name="submit">
